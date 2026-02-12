@@ -1,41 +1,48 @@
-# ScratchBook - Setup Guide
-# ==========================
+# ScratchBook
+
+A Sublime Text plugin that automatically saves untitled buffers to `~/scratchbook/` when you close them.
+
+## Features
+
+- Auto-saves untitled buffers on close
+- Detects content type (JSON, XML, HTML, CSV, SQL, YAML, Markdown, Python, JS, logs)
+- Timestamped filenames (`scratch_20250212_143052.json`)
+- Browse and search saved scratch files
 
 ## Installation
 
 Copy these files to your Sublime Text **Packages/User/** folder:
 
-- `ScratchBook.py`
-- `ScratchBook.sublime-settings`
-- `ScratchBook.sublime-commands`
-- `Main.sublime-menu`
+```
+ScratchBook.py
+ScratchBook.sublime-settings
+ScratchBook.sublime-commands
+Main.sublime-menu
+```
 
-**Folder locations:**
-- **macOS:** `~/Library/Application Support/Sublime Text/Packages/User/`
-- **Linux:** `~/.config/sublime-text/Packages/User/`
-- **Windows:** `%APPDATA%\Sublime Text\Packages\User\`
+| Platform | Location |
+|----------|----------|
+| macOS | `~/Library/Application Support/Sublime Text/Packages/User/` |
+| Linux | `~/.config/sublime-text/Packages/User/` |
+| Windows | `%APPDATA%\Sublime Text\Packages\User\` |
 
-The plugin activates immediately — no restart needed.
-
----
+No restart required.
 
 ## Commands
 
-Open the Command Palette (`Cmd+Shift+P` / `Ctrl+Shift+P`) and search for:
+Available via Command Palette (`Cmd+Shift+P` / `Ctrl+Shift+P`):
 
-| Command                        | What it does                                       |
-|--------------------------------|----------------------------------------------------|
-| `ScratchBook: New Scratch`     | Opens a new disposable scratch buffer               |
-| `ScratchBook: Save`            | Manually save current untitled buffer to scratchbook |
-| `ScratchBook: Close All`       | Save & close all untitled tabs at once               |
-| `ScratchBook: Browse`          | Searchable list of past scratch files with preview   |
-| `ScratchBook: Open Folder`     | Add scratchbook folder to current window's sidebar   |
+| Command | Description |
+|---------|-------------|
+| **ScratchBook: New Scratch** | Open a new scratch buffer |
+| **ScratchBook: Save** | Manually save current buffer |
+| **ScratchBook: Close All** | Save and close all scratch tabs |
+| **ScratchBook: Browse** | Search saved scratch files |
+| **ScratchBook: Open Folder** | Add scratchbook folder to sidebar |
 
----
+## Keybindings
 
-## Recommended Keybindings
-
-Add these to your **Preferences → Key Bindings** file:
+Add to **Preferences → Key Bindings**:
 
 ```json
 [
@@ -46,14 +53,21 @@ Add these to your **Preferences → Key Bindings** file:
 ]
 ```
 
----
+## Configuration
 
-## How It Works
+Edit `ScratchBook.sublime-settings`:
 
-1. You paste text into a new untitled tab (your normal workflow).
-2. You do your search/replace/formatting work.
-3. When you close the tab, the content is **automatically saved** to `~/scratchbook/` with a timestamped filename.
-4. The plugin **detects the content type** — JSON blobs get `.json`, log files get `.log`, XML gets `.xml`, etc.
-5. Your scratchbook folder becomes a searchable archive of everything you've worked on.
+| Setting | Default | Description |
+|---------|---------|-------------|
+| `scratchbook_folder` | `"scratchbook"` | Save location (relative to home or absolute path) |
+| `auto_save_on_close` | `true` | Save when closing tabs |
+| `auto_save_on_focus_lost` | `false` | Save when switching tabs |
+| `auto_detect_extension` | `true` | Detect filetype from content |
+| `default_extension` | `".txt"` | Fallback extension |
+| `filename_format` | `"scratch_%Y%m%d_%H%M%S"` | Filename pattern (strftime) |
+| `min_content_length` | `1` | Minimum characters to save |
+| `organize_by_date` | `false` | Use YYYY/MM subfolders |
 
-No more "Do you want to save?" dialogs. No more losing useful scratch work. No more 100 tabs.
+## License
+
+MIT
