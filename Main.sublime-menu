@@ -1,0 +1,16 @@
+[
+    {
+        "id": "file",
+        "children":
+        [
+            {
+                "caption": "New Scratch File",
+                "command": "scratch_book_new",
+                "mnemonic": "S"
+            },
+            {
+                "caption": "-"
+            }
+        ]
+    }
+]

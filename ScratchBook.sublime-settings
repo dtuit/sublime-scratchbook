@@ -1,0 +1,32 @@
+{
+    // Path where scratch files are saved.
+    // Can be:
+    //   - A simple name like "scratchbook" (saved under your user home directory)
+    //   - An absolute path like "C:\\Users\\You\\Documents\\scratchbook"
+    //   - Use %USERPROFILE% on Windows or ~ on macOS/Linux
+    // Default: ~/scratchbook/ (e.g. C:\Users\You\scratchbook on Windows)
+    "scratchbook_folder": "scratchbook",
+
+    // Auto-save untitled buffers when closing a tab
+    "auto_save_on_close": true,
+
+    // Auto-save untitled buffers when switching away from the tab
+    "auto_save_on_focus_lost": false,
+
+    // Automatically detect content type and use the right file extension
+    // Supports: JSON, XML, HTML, CSV, TSV, SQL, YAML, Markdown, Python, JS, log files
+    "auto_detect_extension": true,
+
+    // Fallback extension when auto-detect is off or can't determine type
+    "default_extension": ".txt",
+
+    // Filename pattern (uses Python strftime format)
+    // Default produces: scratch_20250212_143052.json
+    "filename_format": "scratch_%Y%m%d_%H%M%S",
+
+    // Minimum content length (in characters) to bother saving
+    "min_content_length": 1,
+
+    // Organize saved files into YYYY/MM subfolders
+    "organize_by_date": false
+}

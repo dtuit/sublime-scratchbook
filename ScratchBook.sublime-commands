@@ -1,0 +1,22 @@
+[
+    {
+        "caption": "ScratchBook: New Scratch",
+        "command": "scratch_book_new"
+    },
+    {
+        "caption": "ScratchBook: Save",
+        "command": "scratch_book_save"
+    },
+    {
+        "caption": "ScratchBook: Close All",
+        "command": "scratch_book_close_all"
+    },
+    {
+        "caption": "ScratchBook: Browse",
+        "command": "scratch_book_browse"
+    },
+    {
+        "caption": "ScratchBook: Open Folder",
+        "command": "scratch_book_open_folder"
+    }
+]
